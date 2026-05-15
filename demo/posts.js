@@ -1,0 +1,21 @@
+window.SAMETAKE_POSTS = [
+  { author: "Maya Chen", role: "Founder", text: "OpenAI just launched another cinematic AI video model and the demos look unreal. Sora-style generation is clearly becoming the new launch-day spectacle." },
+  { author: "Rohan Iyer", role: "Product Lead", text: "Veo, Runway, Sora, whatever the name is, AI video generation is turning every model release into a movie trailer moment." },
+  { author: "Elena Park", role: "Creative Director", text: "The latest video model launch makes short cinematic clips feel almost too easy. The creative workflow for film teams is changing fast." },
+  { author: "Josh Miller", role: "Investor", text: "Every OpenAI video launch now arrives with the same hype loop: cinematic examples, generation benchmarks, and everyone asking if agencies are done." },
+  { author: "Fatima Noor", role: "Designer", text: "Runway and Veo pushed video generation forward, but the Sora-style launch cycle is what makes AI film tools feel mainstream." },
+  { author: "Anika Rao", role: "Operator", text: "AI agents are not just copilots anymore. Autonomous workflow automation is coming for the SaaS dashboard sprawl inside enterprise teams." },
+  { author: "Ben Carter", role: "CTO", text: "The next software category is agents replacing SaaS. Instead of clicking through enterprise tools, autonomous agents will run the workflow." },
+  { author: "Priya Shah", role: "VC", text: "Copilots were the warmup. Agentic automation that completes whole business workflows is the real threat to traditional SaaS software." },
+  { author: "Mateo Ruiz", role: "Engineer", text: "Enterprise software is becoming a layer of autonomous agents. The old SaaS seat model feels exposed when workflows can run themselves." },
+  { author: "Grace Kim", role: "Analyst", text: "Agents, workflow automation, and AI copilots are converging into a replacement for many SaaS tools people only tolerate today." },
+  { author: "Dev Singh", role: "Career Coach", text: "Internship candidates: your resume should show impact, not tasks. Recruiters scan for outcomes before they decide who gets an interview." },
+  { author: "Nina Patel", role: "University Recruiter", text: "For placement season, practice interview stories early. A clear career narrative can matter as much as the internship brand on your resume." },
+  { author: "Luis Gomez", role: "New Grad SWE", text: "The best internship advice I got was to tailor my resume for each job and track recruiter follow-ups like a real pipeline." },
+  { author: "Sarah Ahmed", role: "Hiring Manager", text: "If you want an intern offer, prepare examples before the interview: conflict, ownership, debugging, and what you learned on the job." },
+  { author: "Olivia Stone", role: "Urban Planner", text: "A small public library in my neighborhood started lending power tools, and the waitlist is somehow longer than the one for new novels." },
+  { author: "Chen Wei", role: "Data Scientist", text: "I compared train arrival predictions with actual platform times for a month. The boring baseline beat the fancy model on rainy days." },
+  { author: "Ava Brooks", role: "Chef", text: "Fermenting lemons with a little black pepper changed how I finish roasted vegetables. Tiny pantry experiments keep cooking interesting." },
+  { author: "Noah Reed", role: "Teacher", text: "My students built a cardboard city to learn fractions, zoning, and teamwork. The math lesson worked because the town kept falling over." },
+  { author: "Maya Chen", role: "Founder", text: "Another cinematic AI video generation model launched, and the feed is full of the same Sora, Veo, and Runway comparisons again." }
+];

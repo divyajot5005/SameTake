@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>SameTake</title>
+    <style>
+      body {
+        width: 260px;
+        margin: 0;
+        padding: 14px;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        color: #172033;
+        background: #f8fafc;
+      }
+
+      h1 {
+        margin: 0 0 12px;
+        font-size: 20px;
+      }
+
+      label {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
+        margin: 12px 0;
+        font-size: 13px;
+        font-weight: 650;
+      }
+
+      select {
+        padding: 6px 8px;
+        border: 1px solid #b8c3d2;
+        border-radius: 6px;
+        background: white;
+      }
+
+      button {
+        width: 100%;
+        border: 1px solid #2563eb;
+        background: #2563eb;
+        color: white;
+        border-radius: 7px;
+        padding: 8px 10px;
+        font-weight: 700;
+        cursor: pointer;
+      }
+
+      button:hover {
+        background: #1d4ed8;
+      }
+
+      .status {
+        min-height: 16px;
+        margin-top: 9px;
+        font-size: 12px;
+        color: #52627a;
+      }
+
+      .metrics {
+        border-top: 1px solid #dbe3ee;
+        margin-top: 12px;
+        padding-top: 10px;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 8px;
+      }
+
+      .metric {
+        border: 1px solid #dbe3ee;
+        border-radius: 7px;
+        background: white;
+        padding: 8px;
+        text-align: center;
+      }
+
+      .metric strong {
+        display: block;
+        font-size: 18px;
+        color: #172033;
+      }
+
+      .metric span {
+        display: block;
+        margin-top: 2px;
+        font-size: 11px;
+        color: #52627a;
+      }
+
+    </style>
+  </head>
+  <body>
+    <h1>SameTake</h1>
+    <label>
+      <span>Enabled</span>
+      <input id="enabled" type="checkbox">
+    </label>
+    <label>
+      <span>Allowed repeats per topic</span>
+      <select id="allowedRepeats">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="5">5</option>
+      </select>
+    </label>
+    <button id="reset">Reset session memory</button>
+    <div class="metrics" aria-live="polite">
+      <div class="metric"><strong id="scannedCount">0</strong><span>Scanned</span></div>
+      <div class="metric"><strong id="topicCount">0</strong><span>Topics</span></div>
+      <div class="metric"><strong id="blockedCount">0</strong><span>Blocked</span></div>
+    </div>
+    <div id="pageSignal" class="status">No page signal yet</div>
+    <div id="status" class="status" aria-live="polite"></div>
+    <script src="popup.js"></script>
+  </body>
+</html>
