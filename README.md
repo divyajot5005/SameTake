@@ -10,6 +10,10 @@ The project also includes a local demo page with fake LinkedIn-style posts so th
 
 [Open SameTake Demo](https://divyajot5005.github.io/SameTake/)
 
+## Local Extension Install Page
+
+[Install SameTake locally](https://divyajot5005.github.io/SameTake/install/)
+
 If GitHub Pages is not enabled yet, deploy the static demo with one click:
 
 [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fdivyajot5005%2FSameTake&project-name=sametake&repository-name=SameTake)

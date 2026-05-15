@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Install SameTake Locally</title>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        background: #f3f6fa;
+        color: #172033;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      }
+
+      main {
+        max-width: 720px;
+        margin: 0 auto;
+        padding: 40px 18px;
+      }
+
+      h1 {
+        margin: 0 0 10px;
+        font-size: 30px;
+      }
+
+      p {
+        color: #52627a;
+        line-height: 1.55;
+      }
+
+      .actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin: 24px 0;
+      }
+
+      a,
+      button {
+        border: 1px solid #2563eb;
+        border-radius: 7px;
+        background: #2563eb;
+        color: #ffffff;
+        cursor: pointer;
+        display: inline-flex;
+        align-items: center;
+        min-height: 40px;
+        padding: 9px 13px;
+        font: inherit;
+        font-weight: 750;
+        text-decoration: none;
+      }
+
+      button.secondary,
+      a.secondary {
+        background: #ffffff;
+        color: #172033;
+        border-color: #b8c3d2;
+      }
+
+      ol {
+        background: #ffffff;
+        border: 1px solid #d7dde5;
+        border-radius: 8px;
+        margin: 20px 0 0;
+        padding: 18px 18px 18px 40px;
+      }
+
+      li {
+        margin: 10px 0;
+        line-height: 1.5;
+      }
+
+      code {
+        background: #eef2f6;
+        border-radius: 5px;
+        padding: 2px 5px;
+      }
+
+      .note {
+        border-left: 4px solid #0a66c2;
+        background: #ffffff;
+        border-radius: 8px;
+        margin-top: 22px;
+        padding: 12px 14px;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <h1>Install SameTake Locally</h1>
+      <p>
+        Chrome does not allow a website link to enable Developer mode or load an unpacked extension automatically.
+        This page gives you the shortest safe path.
+      </p>
+
+      <div class="actions">
+        <a href="https://github.com/divyajot5005/SameTake/archive/refs/heads/main.zip">Download SameTake ZIP</a>
+        <a class="secondary" href="chrome://extensions">Open chrome://extensions</a>
+        <button class="secondary" id="copyExtensions" type="button">Copy chrome://extensions</button>
+      </div>
+
+      <ol>
+        <li>Download and unzip the SameTake ZIP.</li>
+        <li>Open <code>chrome://extensions</code>.</li>
+        <li>Enable <strong>Developer mode</strong>.</li>
+        <li>Click <strong>Load unpacked</strong>.</li>
+        <li>Select the unzipped <code>SameTake-main/extension</code> folder.</li>
+        <li>Open LinkedIn and refresh the feed.</li>
+      </ol>
+
+      <div class="note">
+        True one-click installation requires publishing SameTake on the Chrome Web Store.
+      </div>
+    </main>
+    <script>
+      document.getElementById("copyExtensions").addEventListener("click", async () => {
+        await navigator.clipboard.writeText("chrome://extensions");
+      });
+    </script>
+  </body>
+</html>
