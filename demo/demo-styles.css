@@ -41,6 +41,36 @@ h1 {
   font-weight: 650;
 }
 
+.metrics {
+  display: grid;
+  grid-template-columns: repeat(3, 74px);
+  gap: 8px;
+}
+
+.metrics div {
+  border: 1px solid #d7dde5;
+  border-radius: 7px;
+  background: #ffffff;
+  padding: 6px 8px;
+  text-align: center;
+}
+
+.metrics strong,
+.metrics span {
+  display: block;
+}
+
+.metrics strong {
+  color: #172033;
+  font-size: 17px;
+}
+
+.metrics span {
+  margin-top: 1px;
+  color: #64748b;
+  font-size: 11px;
+}
+
 select,
 button {
   border: 1px solid #b8c3d2;
@@ -162,6 +192,11 @@ main {
   .controls {
     align-items: flex-start;
     flex-direction: column;
+  }
+
+  .metrics {
+    grid-template-columns: repeat(3, minmax(66px, 1fr));
+    width: 100%;
   }
 
   main {

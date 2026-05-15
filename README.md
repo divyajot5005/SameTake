@@ -6,6 +6,10 @@ Core product: **Hide the 4th post saying the same thing.**
 
 The project also includes a local demo page with fake LinkedIn-style posts so the clustering and collapse behavior can be tested without depending on LinkedIn's live DOM.
 
+## One-Click Demo
+
+[Open SameTake Demo](https://divyajot5005.github.io/SameTake/)
+
 ## What It Does
 
 - Runs as a Manifest V3 Chrome extension.
@@ -47,6 +51,8 @@ demo/index.html
 ```
 
 The demo includes repeated clusters for AI video launches, AI agents replacing SaaS, internship/career advice, and unique posts. With the default setting of 3 allowed repeats, the 4th and later similar posts collapse.
+
+The hosted demo is deployed with GitHub Pages from `.github/workflows/pages.yml`.
 
 ## Load The Chrome Extension
 

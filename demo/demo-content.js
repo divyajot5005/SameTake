@@ -120,9 +120,13 @@
   const feed = document.getElementById("feed");
   const repeats = document.getElementById("allowedRepeats");
   const reset = document.getElementById("reset");
+  const scannedCount = document.getElementById("scannedCount");
+  const topicCount = document.getElementById("topicCount");
+  const blockedCount = document.getElementById("blockedCount");
   let memory = SameTakeCore.createMemory();
   let observer;
   let scheduled = false;
+  const stats = { scanned: 0, blocked: 0 };
 
   function renderPosts() {
     const fragment = document.createDocumentFragment();
@@ -147,6 +151,15 @@
       fragment.appendChild(article);
     });
     feed.replaceChildren(fragment);
+    stats.scanned = 0;
+    stats.blocked = 0;
+    updateStats();
+  }
+
+  function updateStats() {
+    scannedCount.textContent = String(stats.scanned);
+    topicCount.textContent = String(memory.clusters.length);
+    blockedCount.textContent = String(stats.blocked);
   }
 
   function createCollapsedCard(post, cluster) {
@@ -162,13 +175,23 @@
       </div>
     `;
     card.querySelector("strong").textContent = cluster.topicLabel;
-    card.querySelector(".sametake-card__aside").textContent = LINES[Math.floor(Math.random() * LINES.length)];
+    card.querySelector(".sametake-card__aside").textContent = LINES[(cluster.count - 1) % LINES.length];
+    card.dataset.sametakeCardClusterId = cluster.id;
     card.addEventListener("click", (event) => {
       const button = event.target.closest("button");
       if (!button) return;
-      if (button.dataset.action === "reset") SameTakeCore.resetCluster(memory, cluster.id);
-      post.classList.remove("sametake-hidden-original");
-      card.remove();
+      if (button.dataset.action === "reset") {
+        SameTakeCore.resetCluster(memory, cluster.id);
+        document.querySelectorAll(`[data-sametake-cluster-id="${cluster.id}"]`).forEach((node) => {
+          node.classList.remove("sametake-hidden-original");
+        });
+        document.querySelectorAll(`[data-sametake-card-cluster-id="${cluster.id}"]`).forEach((node) => node.remove());
+      } else {
+        post.classList.remove("sametake-hidden-original");
+        card.remove();
+      }
+      stats.blocked = document.querySelectorAll(".sametake-card").length;
+      updateStats();
     });
     return card;
   }
@@ -178,11 +201,15 @@
     document.querySelectorAll(".feed-post:not([data-sametake-processed])").forEach((post) => {
       post.dataset.sametakeProcessed = "true";
       const cluster = SameTakeCore.classify(memory, post.innerText || post.textContent || "");
+      post.dataset.sametakeClusterId = cluster.id;
+      stats.scanned += 1;
       if (cluster.count > Number(repeats.value)) {
         post.classList.add("sametake-hidden-original");
         post.insertAdjacentElement("beforebegin", createCollapsedCard(post, cluster));
+        stats.blocked += 1;
       }
     });
+    updateStats();
   }
 
   function scheduleProcess() {
