@@ -12,7 +12,7 @@ The project also includes a local demo page with fake LinkedIn-style posts so th
 
 ## Local Extension Install Page
 
-[Install SameTake locally](https://divyajot5005.github.io/SameTake/install/)
+[Install SameTake locally](https://htmlpreview.github.io/?https://github.com/divyajot5005/SameTake/blob/main/install/index.html)
 
 If GitHub Pages is not enabled yet, deploy the static demo with one click:
 
